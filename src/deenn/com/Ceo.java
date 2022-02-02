@@ -1,29 +1,29 @@
 package deenn.com;
 
-import java.util.ArrayList;
+public class Ceo extends Employees implements HireAndFire{
+//    Applicants applicants = new Applicants();
 
-public class Ceo extends Person implements HireAndFire{
-    private final Drogo drogo = new Drogo();
-    public Ceo(String name, int id, String email, String rank) {
-        super(name, id, email, rank);
-    }
-
-
-    @Override
-    public void fire() {
-        System.out.println("You're fired");
+    private Ceo(String name, int id, String email, String qualification, boolean isGraduate) {
+        super(name, id, email, qualification, isGraduate);
     }
 
     @Override
-    public void hire() {
-        FinanceGuy newGuy = new FinanceGuy("Dane", 1, "dane@gmail.com", "finance1");
-        ArrayList<FinanceGuy> financeGuyList = drogo.getPerson();
-        if (financeGuyList == null) {
-            financeGuyList = new ArrayList<>();
-            financeGuyList.add(newGuy);
-            drogo.setPerson(financeGuyList);
+    public void hire(Drogo drogo) {
+        if (drogo.vacancy.size() > 0 ||applicants.isGraduate() ) {
+           drogo.employee.add(applicants.getName());
+            System.out.println("Dear " + applicants.getName() + "");
+        } else if (drogo.vacancy.size() > 0 || !applicants.isGraduate()){
+            drogo.employee.add(applicants.getName());
+        } else {
+            System.out.println("");
         }
-        System.out.println("You're hired");
 
+    }
+
+    @Override
+    public void fire(Drogo drogo) {
+        if (drogo.getEmployees().) {
+
+        }
     }
 }

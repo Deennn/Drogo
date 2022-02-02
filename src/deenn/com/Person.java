@@ -4,17 +4,18 @@ abstract class Person {
     private String name;
     private int id;
     private String email;
-    private String rank;
+    private String qualification;
+    private boolean isGraduate;
 
-
-    public Person(String name, int id, String email, String rank) {
+    public Person(String name, int id, String email, String qualification, boolean isGraduate) {
         this.name = name;
         this.id = id;
         this.email = email;
-        this.rank = rank;
+        this.qualification = qualification;
+        this.isGraduate = isGraduate;
     }
 
-    public String getName() {
+    public Employees getName() {
         return name;
     }
 
@@ -38,13 +39,19 @@ abstract class Person {
         this.email = email;
     }
 
-    public String getRank() {
-        return rank;
+    public String getQualification() {
+        return qualification;
     }
 
-    public void setRank(String rank) {
-        this.rank = rank;
+    public void setQualification(String qualification) {
+        this.qualification = qualification;
     }
 
+    public boolean isGraduate() {
+        return isGraduate;
+    }
 
+    public void setGraduate(boolean graduate) {
+        isGraduate = graduate;
+    }
 }
